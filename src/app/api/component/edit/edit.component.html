@@ -1,0 +1,16 @@
+<form #formdata="ngForm" (submit)="submit(formdata)">
+    <div>
+        <label>
+            Name:
+            <input [disabled]="baseUrl" placeholder="Your name" name="name" [(ngModel)]="name" required
+                #name2="ngModel">
+        </label>
+    </div>
+    <div>
+        <label>
+            Email:
+            <input type="email" [disabled]="baseUrl" name="email" [(ngModel)]="email" required #email2="ngModel">
+        </label>
+    </div>
+    <button type="submit" *ngIf="!baseUrl">Send</button>
+</form>

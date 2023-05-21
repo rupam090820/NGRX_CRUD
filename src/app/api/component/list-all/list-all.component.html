@@ -1,0 +1,16 @@
+
+ <a routerLink="/add" class="card-link">Add</a>
+<div class="card mt-4" style="width: 18rem;">
+   
+    <div class="card-body" *ngFor="let a of StoreAllList let i=index" >
+      <h5 class="card-title">ALl-List</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Id:--{{a.id}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">name:--{{a.name}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">email:--{{a.email}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Index possition :-- {{i}}</h6>
+      <a [routerLink]="['/edit',a.id]" (click)="sendIndex(i)" class="card-link" >Edit</a>
+      <button class="card-link" (click)="delete(a.id,i)" >Delete</button>
+      <a [routerLink]="['/view',a.id]"  class="card-link">Details</a>
+      <hr>
+    </div>
+  </div>
